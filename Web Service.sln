@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entidades\Entities.csproj", "{175645E5-5288-4FE4-B428-8298F105B8C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{0FF07874-A560-4C0C-BC64-06A1F393E631}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{0B16ABBB-7BD7-43F6-AC4B-C266A5CCCEBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{175645E5-5288-4FE4-B428-8298F105B8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175645E5-5288-4FE4-B428-8298F105B8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175645E5-5288-4FE4-B428-8298F105B8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175645E5-5288-4FE4-B428-8298F105B8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF07874-A560-4C0C-BC64-06A1F393E631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF07874-A560-4C0C-BC64-06A1F393E631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF07874-A560-4C0C-BC64-06A1F393E631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF07874-A560-4C0C-BC64-06A1F393E631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B16ABBB-7BD7-43F6-AC4B-C266A5CCCEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B16ABBB-7BD7-43F6-AC4B-C266A5CCCEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B16ABBB-7BD7-43F6-AC4B-C266A5CCCEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B16ABBB-7BD7-43F6-AC4B-C266A5CCCEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F4CF71A-2A0E-47BE-BC8A-8E62761227E8}
+	EndGlobalSection
+EndGlobal
