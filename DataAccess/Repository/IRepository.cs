@@ -1,11 +1,13 @@
-﻿namespace DataAccess.Repository
+﻿using Entities;
+
+namespace DataAccess.Repository
 {
     public interface IRepository<T>
     {
-        public void Create(T _object);
-        public IEnumerable<T> Read();
-        public void Update(int id, T _object);
-        public void Delete(T _object);
-        public T? GetById(int id);
+        public Task<csResponse> Create(T _object);
+        public Task<csResponse> Read();
+        public Task<csResponse> Update(int id, T _object);
+        public Task<csResponse> Delete(T _object);
+        public Task<csResponse> GetById(int id);
     }
 }

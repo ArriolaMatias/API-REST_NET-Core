@@ -1,4 +1,5 @@
-﻿using DataAccess.Repository;
+﻿using API.Business_Layer;
+using DataAccess.Repository;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,105 +10,43 @@ namespace API.Controllers
     public class CategoriaController : Controller
     {
         private readonly IRepository<Categoria> _repository;
+        private readonly BlCategoria _blCategorias;
         public CategoriaController(IRepository<Categoria> repository)
         {
             _repository = repository;
+            _blCategorias = new BlCategoria(_repository);
+        }
+
+        #region CRUD
+        [HttpGet]
+        public async Task<csResponse> GetCategorias()
+        {
+            return await _blCategorias.GetCategorias();
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Categoria>> GetCategorias()
+        public async Task<csResponse> GetCategoriaById(int _id)
         {
-            csResponse _response = new csResponse();
-            try
-            {
-                IEnumerable<Categoria> categorias = _repository.Read().ToList<Categoria>();
-                _response.StatusCode = 200;
-                _response.Data = categorias;
-                return Ok(_response);
-            }
-            catch (Exception e)
-            {
-                _response.Message = e.Message;
-                return BadRequest(_response);
-            }
-            
-        }
-
-        [HttpGet]
-        public ActionResult<Categoria> GetCategoriaById(int _id)
-        {
-            csResponse _response = new csResponse();
-            try
-            {
-                Categoria? _categoria = _repository.GetById(_id);
-                if (_categoria == null) { _response.StatusCode = 404; return NotFound(_response); }
-
-                _response.StatusCode = 200;
-                _response.Data = _categoria;
-                return Ok(_response);
-            }
-            catch (Exception e)
-            {
-                _response.Message = e.Message;
-                return BadRequest(_response);
-            }
+            return await _blCategorias.GetCategoriaById(_id);
         }
 
         [HttpPost]
-        public ActionResult AddCategoria(Categoria _categoria)
+        public async Task<csResponse> AddCategoria(Categoria _categoria)
         {
-            csResponse _response = new csResponse();
-            try
-            {
-                _repository.Create(_categoria);
-                _response.StatusCode = 200;
-                return Ok(_response);
-            }
-            catch (Exception e)
-            {
-                _response.Message = e.Message;
-                return BadRequest(_response);
-            }
+            return await _blCategorias.Create(_categoria);
         }
 
         [HttpPut]
-        public ActionResult EditCategoria(int _id, Categoria _categoria)
+        public async Task<csResponse> EditCategoria(int _id, Categoria _categoria)
         {
-            csResponse _response = new csResponse();
-
-            if (_id != _categoria.Id) { _response.StatusCode = 500; _response.Message = "Los parametros ID no coinciden";  return BadRequest(_response); }
-            try
-            {
-                _repository.Update(_id, _categoria);
-                _response.StatusCode = 200;
-                return Ok(_response);
-            }
-            catch (Exception e)
-            {
-                _response.Message = e.Message; 
-                return BadRequest(_response);
-            }
-
+            return await _blCategorias.Edit(_id, _categoria);
         }
 
         [HttpDelete]
-        public ActionResult DeleteCategoria(int _id)
+        public async Task<csResponse> DeleteCategoria(Categoria _categoria)
         {
-            csResponse _response = new csResponse();
-            try
-            {
-                Categoria? categoria = _repository.GetById(_id);
-                if (categoria == null) { _response.StatusCode = 404; return NotFound(_response); }
-
-                _repository.Delete(categoria);
-                _response.StatusCode = 200;  
-                return Ok(_response);
-            }
-            catch (Exception e)
-            {
-                _response.Message = e.Message;
-                return BadRequest(_response);
-            }
+            return await _blCategorias.Delete(_categoria);
         }
+        #endregion
     }
 }
