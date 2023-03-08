@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Reflection.Emit;
 
 namespace DataAccess.EntityFramework
 {
@@ -17,11 +18,17 @@ namespace DataAccess.EntityFramework
         {
             _modelBuilder.Entity<Categoria>().HasKey(cat => cat.Id);
 
-            _modelBuilder.Entity<Subcategoria>().HasOne<Categoria>("CategoriaPadre");
+            //_modelBuilder.Entity<Subcategoria>().HasOne<Categoria>("CategoriaPadre");
 
-            _modelBuilder.Entity<Movimiento>().HasKey(cat => cat.Id);
+            _modelBuilder.Entity<Movimiento>().HasKey(mov => mov.Id);
+            _modelBuilder.Entity<Movimiento>().Property(mov => mov.Id)
+                                              .ValueGeneratedOnAdd();
             _modelBuilder.Entity<Movimiento>().HasOne<Categoria>("Categoria");
-            _modelBuilder.Entity<Movimiento>().HasOne<Subcategoria>("Subcategoria");
+                                              //.WithMany(c => c.Movimientos)
+                                              //.HasForeignKey(m => m.CategoriaId)
+                                              //.IsRequired();
+
+            //_modelBuilder.Entity<Movimiento>().HasOne<Subcategoria>("Subcategoria");
 
             IniciarDatos(_modelBuilder);
 
