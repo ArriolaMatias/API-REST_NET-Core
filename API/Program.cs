@@ -2,6 +2,7 @@ using DataAccess.EntityFramework;
 using DataAccess.Repository;
 using Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace API
 {
@@ -14,8 +15,12 @@ namespace API
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<EFContext>(options => options.UseSqlite("DataSource= Test.db"));
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+            builder.Services.AddDbContext<EFContext>(options => options.UseSqlite("DataSource= Test.db").EnableSensitiveDataLogging());
             builder.Services.AddScoped<IRepository<Categoria>, CategoriaRepository>();
+            builder.Services.AddScoped<IRepository<Movimiento>, MovimientoRepository>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
