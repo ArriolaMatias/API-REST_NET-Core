@@ -30,10 +30,12 @@ namespace DataAccess.Repository
 
             }catch(Exception ex)
             {
+                string innerEx = "";
+                if (ex.InnerException != null) { innerEx = ex.InnerException.Message;  }
                 return new csResponse()
                 {
                     StatusCode = HttpStatusCode.BadRequest,
-                    Message = "No se ha insertado el registro. Error: "+ex.Message,
+                    Message = "No se ha insertado el registro. Error: " + ex.Message + "\n" + innerEx,
                     Data = null
                 };
             }
