@@ -42,14 +42,61 @@ namespace DataAccess.Repository
                 }
         }
 
-        public Task<csResponse> Delete(Movimiento _object)
+        public async Task<csResponse> Delete(Movimiento _movimiento)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Remove(_movimiento);
+                _context.SaveChanges();
+
+                return new csResponse()
+                {
+                    StatusCode = HttpStatusCode.NoContent,
+                    Message = "El registro se ha eliminado correctamente."
+                };
+            }
+            catch (Exception ex)
+            {
+                return new csResponse()
+                {
+                    StatusCode = HttpStatusCode.BadRequest,
+                    Message = "El registro no se ha eliminado. Error: " + ex.Message
+                };
+            }
         }
 
-        public Task<csResponse> GetById(int id)
+        public async Task<csResponse> GetById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var movimiento = from m in _context.Movimientos
+                                where m.Id == id
+                                select m;
+
+                if (!movimiento.Any())
+                {
+                    return new csResponse()
+                    {
+                        StatusCode = HttpStatusCode.NoContent,
+                        Message = "No se ha encontrado el elemento.",
+                        Data = movimiento.ToList<Movimiento>()
+                    };
+                }
+                else
+                {
+                    return new csResponse()
+                    {
+                        StatusCode = HttpStatusCode.OK,
+                        Message = "Operacion ejecutada correctamente",
+                        Data = movimiento.FirstOrDefault()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new csResponse() { StatusCode = HttpStatusCode.InternalServerError, 
+                                            Message = "Ha ocurrido un error no controlado: \n" + ex.Message };
+            }
         }
 
         public async Task<csResponse> Read()
@@ -79,9 +126,30 @@ namespace DataAccess.Repository
             }
         }
 
-        public Task<csResponse> Update(int id, Movimiento _object)
+        public async Task<csResponse> Update(int id, Movimiento _object)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Entry(_object).State = EntityState.Modified;
+                _context.SaveChanges();
+
+                return new csResponse()
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Message = "Registro actualizado correctamente.",
+                    Data = _object
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new csResponse()
+                {
+                    StatusCode = HttpStatusCode.BadRequest,
+                    Message = "El registro no ha podido modificarse. Error: " + ex.Message,
+                    Data = _object
+                };
+            }
         }
     }
 }

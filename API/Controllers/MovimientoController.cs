@@ -24,10 +24,28 @@ namespace API.Controllers
             return await _blMovimiento.GetMovimientos();
         }
 
+        [HttpGet]
+        public async Task<csResponse> GetMovimientoById(int _id)
+        {
+            return await _blMovimiento.GetMovimientoById(_id);
+        }
+
         [HttpPost]
         public async Task<csResponse> AddMovimiento(Movimiento movimiento)
         {
             return await _blMovimiento.Create(movimiento);
+        }
+
+        [HttpPut]
+        public async Task<csResponse> UpdateMovimiento(int id, Movimiento movimiento)
+        {
+            return await _blMovimiento.Edit(id, movimiento);
+        }
+
+        [HttpDelete]
+        public async Task<csResponse> DeleteMovimiento(Movimiento movimiento)
+        {
+            return await _blMovimiento.Delete(movimiento);
         }
     }
 }
