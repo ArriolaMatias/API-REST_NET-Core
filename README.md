@@ -1,24 +1,23 @@
 
 # API REST .NET Core
 
+
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-API REST desarrollada en .NET Core con las operaciones de CRUD básicas para 3 entidades orientadas a gestionar finanzas personales: 
+API REST desarrollada en .NET Core con las operaciones de CRUD básicas para 3 entidades orientadas a gestionar consumos y finanzas personales: 
 - Categorías 
 - Movimientos
 - Usuarios
 
-El modelo de datos se creo en un archivo SqLite, generado a partir de la metodologia **Code-First** utilizando EntityFramework y Fluent-Api.
+El modelo de datos se creo en un archivo .db de _SQLite_ generado a partir de la metodologia **Code First** utilizando _Entity Framework_, _LINQ_ y _Fluent-Api_.
 
-Además, utiliza JWT para validar peticiones y usuarios, junto con swagger para la documentacion.
+Además, utiliza _JWT_ para validar peticiones y usuarios, junto con _Swagger_ para la documentacion.
 
-## Tech Stack
+## Tecnologías
 
-![Iconos de tecnologías usadas](https://skillicons.dev/icons?i=cs,dotnet,sqlite,entityframework)
+![Iconos de tecnologías usadas](https://skillicons.dev/icons?i=cs,dotnet,sqlite)
 
-## Acknowledgements
+## Herramientas
 
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+![Iconos de herramientas usadas](https://skillicons.dev/icons?i=visualstudio,git,postman)
 
