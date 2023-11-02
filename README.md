@@ -19,10 +19,7 @@
 
 * [Sobre El Proyecto](#sobre-el-proyecto)
 * [Desarrollado Con](#desarrollado-con)
-* [Empezando](#empezando)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Uso](#uso)
+* [Instalación](#instalacion)
 * [Licencia](#licencia)
 * [Autor](#autor)
 
@@ -44,49 +41,18 @@ Además, utiliza **JWT** para validar peticiones y usuarios, junto con **Swagger
 
 * []()
 
-## Empezando
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-* npm
-
-```sh
-npm install npm@latest -g
-```
-
-### Installation
+## Instalacion
 
 1. Clona o descargá el repositorio.
 2. Levantá la solucion utilizando el comando `dotnet build`.
 3. Navega hacia al directorio **API** y compilá el proyecto utilizando el comando `dotnet run`
 4. Ingresá en el navegador a la URL https://localhost:7200/swagger para ver la documentación en Swagger.
 
-## Uso
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-### Creating A Pull Request
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## Licencia
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-## Authors
+## Autor
 
 * **Matías Agustín Arriola** - *Desarrollador de Software* - [Matías Agustín Arriola](https://github.com/ArriolaMatias/)
 
