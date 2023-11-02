@@ -61,25 +61,10 @@ npm install npm@latest -g
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-
-2. Clone the repo
-
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-
-3. Install NPM packages
-
-```sh
-npm install
-```
-
-4. Enter your API in `config.js`
-
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
+1. Clona o descargá el repositorio.
+2. Levantá la solucion utilizando el comando `dotnet build`.
+3. Navega hacia al directorio **API** y compilá el proyecto utilizando el comando `dotnet run`
+4. Ingresá en el navegador a la URL https://localhost:7200/swagger para ver la documentación en Swagger.
 
 ## Uso
 
