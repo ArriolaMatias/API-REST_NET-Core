@@ -3,8 +3,6 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-___
-
 API REST desarrollada en .NET Core con las operaciones de CRUD básicas para 3 entidades orientadas a gestionar consumos y finanzas personales: 
 - Categorías 
 - Movimientos
