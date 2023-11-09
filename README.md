@@ -4,7 +4,7 @@
     <img src="https://api.iconify.design/eos-icons:api.svg?color=%23ffd500" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">REST API .NET Core</h3>
+  <h3 align="center">API REST .NET Core</h3>
 
   <p align="center">
     API REST desarrollada en .NET Core con Entity Framework. Cuenta con las operaciones CRUD para 2 entidades (orientadas a la gestion de finanzas personales) y autenticación mediante JWT.  
