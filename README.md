@@ -37,8 +37,8 @@ El modelo de datos se creo en un archivo .db de **SQLite** generado a partir de 
 
 Además, utiliza **JWT** para validar peticiones y usuarios, junto con **Swagger** para la documentacion.
 
-> [!IMPORTANT]
-> Necesitarás una herramienta como Postman (Puedes descargarlo de ![Aquí](https://www.postman.com/downloads/) para probar el proyecto.
+> [!WARNING]
+> Necesitarás una herramienta como Postman (Podés descargarlo de [Acá](https://www.postman.com/downloads/)) para realizar pruebas en la API del proyecto.
 
 *Algunos ejemplos:*
 
